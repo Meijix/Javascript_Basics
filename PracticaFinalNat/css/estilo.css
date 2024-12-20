@@ -11,6 +11,20 @@ h3{
 .description {
    font-family: 'Fredericka the Great', cursive;
    text-align: center;
+   font-size: 14px;
+   color: #333;
+}
+
+.movie-item h3 {
+   margin: 0 0 10px 0;
+}
+
+.movie-item {
+   border: 1px solid #ddd;
+   margin-bottom: 10px;
+   padding: 10px;
+   border-radius: 5px;
+   background-color: #f9f9f9;
 }
 
 .card-header, .metadata {
@@ -38,8 +52,12 @@ h3{
 
 .card-img {
    -webkit-clip-path: inset(10% 0 20% 0);
-    clip-path: inset(10% 0 20% 0);
-    margin-top: -15%;
+   clip-path: inset(10% 0 20% 0);
+   margin-top: -15%;
+   display: block;
+   width: auto;
+   max-height: 300px;
+   margin-bottom: 10px;
 }
 
 .card-body {
@@ -91,4 +109,10 @@ h3{
    i {
       margin-left: 5px;
    }
+}
+
+
+#miLista {
+   list-style-type: none;
+   padding: 0;
 }

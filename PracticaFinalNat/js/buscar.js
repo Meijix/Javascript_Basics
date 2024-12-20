@@ -17,14 +17,17 @@ $(document).ready(function(){
 				url: `https://api.themoviedb.org/3/search/movie?certification_country=MX&language=es&api_key=3356865d41894a2fa9bfa84b2b5f59bb&query=${encodeURIComponent(palabra)}`,
 				dataType: "json",
 				success: function(data){
-					//console.log(data);
+					console.log(data);
 					$("#miLista").empty();
 					$.each(data.results, function(index, item){
-						$("#miLista").append("<li>" + item.title + "</li>");
-						//mostrar imagen
-						$("#miLista").append("<img class='card-img' src='https://image.tmdb.org/t/p/w500" + item.poster_path + "' />");
-						//mostrar descripción
-						$("#miLista").append("<p class='description'>" + item.overview + "</p>");
+						$("#miLista").append(`
+                        <li class="movie-item">
+                            <h3>${item.title}</h3>
+                            <img class="card-img" src="https://image.tmdb.org/t/p/w500${item.poster_path}" />
+                            <p class="description">${item.overview}</p>
+                        </li>
+						`);
+						
 					});
 				},
 				error: function(){
